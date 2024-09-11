@@ -31,7 +31,3 @@ jobs:
     - name: Check formatting with Ormolu
       run: |
           ormolu --mode check $(find . -name "*.hs")
-
-    - name: Check formatting differences
-      run: |
-          git diff --exit-code
