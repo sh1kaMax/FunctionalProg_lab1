@@ -36,3 +36,6 @@ infinityListMethod to =
         | count == to = acc
         | otherwise = infinityListHelper xs (findLcm x acc) (count + 1)
    in infinityListHelper [1 ..] 1 1
+
+sumi :: Int -> Int -> Int -> Int
+sumi x y z = x + y + z
