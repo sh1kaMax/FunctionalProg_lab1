@@ -1,0 +1,29 @@
+name: Haskell Lint and Format
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Haskell
+      uses: haskell/actions/setup@v1
+      with:
+        ghc-version: '9.4.8'
+
+    - name: Install dependencies
+      run: |
+        stack setup
+        stack install hlint brittany
+
+    - name: Run HLint
+      run: |
+        stack exec hlint -- .
+
+    - name: Run Brittany
+      run: |
+        stack exec brittany -- --check-mode --verbose $(find . -name "*.hs")
