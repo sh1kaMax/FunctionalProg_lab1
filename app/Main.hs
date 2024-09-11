@@ -1,7 +1,9 @@
 module Main
-  ( main
-  ) where
-import           SmallestMultiple
+  ( main,
+  )
+where
+
+import SmallestMultiple
 
 main :: IO ()
 main = do
