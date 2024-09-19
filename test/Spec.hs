@@ -1,3 +1,4 @@
+import qualified ReciprocalCyclesTests
 import qualified SmallestMultipleTests
 import Test.Tasty
 
@@ -8,5 +9,6 @@ tests :: TestTree
 tests =
   testGroup
     "All tests"
-    [ SmallestMultipleTests.tests
+    [ SmallestMultipleTests.tests,
+      ReciprocalCyclesTests.tests
     ]

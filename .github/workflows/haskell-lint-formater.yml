@@ -31,3 +31,6 @@ jobs:
     - name: Check formatting with Ormolu
       run: |
           ormolu --mode check $(find . -name "*.hs")
+
+    - name: Run tests
+      run: stack test
