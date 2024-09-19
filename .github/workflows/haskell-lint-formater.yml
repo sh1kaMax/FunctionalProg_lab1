@@ -20,7 +20,7 @@ jobs:
         enable-stack: true
 
     - name: Run tests
-      run: stack test --no-system-ghc --resolver lts-20.20
+      run: stack test
 
     - name: Install HLint
       run: stack install hlint --resolver lts-20.20
