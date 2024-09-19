@@ -19,6 +19,9 @@ jobs:
         ghc-version: '9.4.8'
         enable-stack: true
 
+    - name: Set up dependencies
+      run: stack setup
+
     - name: Install HLint
       run: stack install hlint --resolver lts-20.20
 
