@@ -19,8 +19,8 @@ jobs:
         ghc-version: '9.4.8'
         enable-stack: true
 
-    - name: Set up dependencies
-      run: stack setup
+    - name: Run tests
+      run: stack test
 
     - name: Install HLint
       run: stack install hlint --resolver lts-20.20
@@ -34,6 +34,3 @@ jobs:
     - name: Check formatting with Ormolu
       run: |
           ormolu --mode check $(find . -name "*.hs")
-
-    - name: Run tests
-      run: stack test
