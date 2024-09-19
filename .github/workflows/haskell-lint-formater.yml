@@ -19,12 +19,6 @@ jobs:
         ghc-version: '9.4.8'
         enable-stack: true
 
-    - name: Initialize Stack
-      run: stack init
-
-    - name: Set up dependencies
-      run: stack setup --no-system-ghc --resolver lts-20.20
-
     - name: Run tests
       run: stack test --no-system-ghc --resolver lts-20.20
 
